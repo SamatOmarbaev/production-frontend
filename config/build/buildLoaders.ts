@@ -3,6 +3,21 @@ import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ["@svgr/webpack"],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -22,6 +37,26 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              locales: ["ru", "en"],
+              keyAsDefaultValue: true,
+            },
+          ],
+        ],
+      },
+    },
+  };
+
   // Если не используем typescript, то нужен babel-loader
   const typescriptLoader = {
     test: /\.tsx?$/,
@@ -29,5 +64,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader, cssLoader];
+  return [svgLoader, babelLoader, typescriptLoader, cssLoader, fileLoader];
 }
