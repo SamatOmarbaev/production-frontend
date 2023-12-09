@@ -5,7 +5,7 @@ export interface BuildPaths {
   src: string;
 }
 
-export type BuildMode = "production" | "development";
+export type BuildMode = 'production' | 'development';
 
 export interface BuildEnv {
   mode: BuildMode;
