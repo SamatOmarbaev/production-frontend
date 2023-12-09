@@ -1,8 +1,8 @@
 .Sidebar {
-  height: calc(100vh - var(--navbar-height));
-  width: var(--sidebar-width);
-  background-color: var(--inverted-bg-color);
   position: relative;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  background-color: var(--inverted-bg-color);
   transition: width 0.3s;
 }
 
@@ -14,7 +14,9 @@
   position: absolute;
   bottom: 20px;
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
   justify-content: center;
-  gap: 1.25rem;
   width: 100%;
 }

@@ -1,3 +1,7 @@
 .LangSwitcher {
   color: var(--inverted-primary-color);
 }
+
+.LangSwitcher:hover {
+  color: var(--inverted-secondary-color);
+}
