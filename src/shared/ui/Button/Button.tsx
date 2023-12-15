@@ -1,7 +1,6 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { t } from 'i18next';
 import styles from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -13,7 +12,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme;
 }
 
-const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = (props) => {
   const {
     children, className, theme, type, ...otherProps
   } = props;
@@ -28,5 +27,3 @@ const Button: FC<ButtonProps> = (props) => {
     </button>
   );
 };
-
-export default Button;
