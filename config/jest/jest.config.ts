@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from "path";
+import path from 'path';
 
 // import type { Config } from 'jest';
 // import { Configuration } from '@types/jest';
