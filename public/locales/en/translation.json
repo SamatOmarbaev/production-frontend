@@ -1,7 +1,9 @@
 {
-  "Язык": "en",
+  "Язык": "En",
   "Страница не найдена": "Not found Page",
   "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Перезагрузить страницу": "Reload the page",
-  "Переключить": "Toggle"
+  "Переключить": "Toggle",
+  "Главная": "Main",
+  "О нас": "About"
 }
