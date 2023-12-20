@@ -20,7 +20,6 @@ export const App: FC = () => {
           <AppRouter />
         </div>
       </Suspense>
-      {'>'}
     </div>
   );
 };
