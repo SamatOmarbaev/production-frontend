@@ -7,17 +7,18 @@ import styles from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 
 interface ModalProps {
-    className?: string;
-    children?: ReactNode;
-    isOpen?: boolean;
-    onClose?: () => void
+  className?: string;
+  children?: ReactNode;
+  isOpen?: boolean;
+  onClose?: () => void;
+  container?: HTMLElement
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal: FC<ModalProps> = (props) => {
   const {
-    className, children, isOpen, onClose,
+    className, children, isOpen, onClose, container,
   } = props;
 
   const [isClosing, setIsClosing] = useState(false);
@@ -61,7 +62,7 @@ export const Modal: FC<ModalProps> = (props) => {
   };
 
   return (
-    <Portal>
+    <Portal container={container}>
       <div className={classNames(styles.Modal, mods, [className, styles[theme]])}>
         <div className={classNames(styles.overlay)} onClick={closeHandler}>
           <div

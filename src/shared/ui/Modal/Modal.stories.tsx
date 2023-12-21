@@ -16,12 +16,14 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
+  container: document.getElementById('root'),
   isOpen: true,
   children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Minus praesentium quae commodi, at ex, fugit atque a consequaturtempora veritatis sapiente tempore aspernatur sed consectetur accusantiumlaboriosam perspiciatis eius rerum!',
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
+  container: document.getElementById('root'),
   isOpen: true,
   children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Minus praesentium quae commodi, at ex, fugit atque a consequaturtempora veritatis sapiente tempore aspernatur sed consectetur accusantiumlaboriosam perspiciatis eius rerum!',
 };
