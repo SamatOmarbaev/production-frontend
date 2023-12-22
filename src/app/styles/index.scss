@@ -4,11 +4,11 @@
 @import "./variables/global";
 
 body {
-  min-height: 100vh;
   font: var(--font-m);
 }
 
 .app {
+  min-height: 100vh;
   color: var(--primary-color);
   background: var(--bg-color);
 }
