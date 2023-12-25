@@ -7,8 +7,11 @@
   "Главная": "Main",
   "О нас": "About",
   "Войти": "Login",
+  "Выйти": "Logout",
   "Увеличить": "increment",
   "Уменьшить": "decrement",
   "Введите ваше имя": "Enter your name",
-  "Введите пароль": "Enter the password"
+  "Введите пароль": "Enter the password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неправильный логин или пароль": "You entered the wrong username or password"
 }

@@ -1,4 +1,4 @@
-import webpack from 'webpack';
+import webpack, { DefinePlugin } from 'webpack';
 import path from 'path';
 import { buildCssLoaders } from '../build/loaders/buildCssLoaders';
 import { BuildPaths } from '../build/types/config';
@@ -10,7 +10,8 @@ export default ({ config }: {config: webpack.Configuration}) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
-  config.resolve?.modules?.push(paths.src);
+
+  config!.resolve!.modules = [paths.src, 'node_modules'];
   config.resolve?.extensions?.push('.ts', '.tsx');
 
   // eslint-disable-next-line no-param-reassign
@@ -28,6 +29,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     use: ['@svgr/webpack'],
   });
   config.module!.rules!.push(buildCssLoaders(true));
+
+  config.plugins?.push(new DefinePlugin({
+    __IS_DEV__: true,
+  }));
 
   return config;
 };
