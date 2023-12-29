@@ -1,5 +1,5 @@
 import {
-  FC, useMemo, useState,
+  FC, useEffect, useMemo, useState,
 } from 'react';
 
 import {
@@ -23,6 +23,14 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
     }),
     [theme],
   );
+
+  useEffect(() => {
+    document.body.classList.add(theme);
+
+    return () => {
+      document.body.classList.remove(theme);
+    };
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={defaultProps}>

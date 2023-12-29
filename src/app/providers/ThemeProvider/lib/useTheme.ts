@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 
@@ -16,14 +16,6 @@ export function useTheme(): UseThemeResult {
     document.body.className = newTheme;
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
-
-  useEffect(() => {
-    // document.body.className = theme;
-    document.body.classList.add(theme);
-    return () => {
-      document.body.classList.remove(theme);
-    };
-  }, [theme]);
 
   return { theme, toggleTheme };
 }
