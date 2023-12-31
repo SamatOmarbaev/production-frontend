@@ -5,14 +5,14 @@ import { FC, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
 export type ReducersList = {
-    [name in StateSchemaKey]?: Reducer
+  [name in StateSchemaKey]?: Reducer
 }
 
 type ReducersListEntry = [StateSchemaKey, Reducer]
 
 interface DynamicModuleLoaderProps {
-    reducers: ReducersList;
-    removeAfterUnmount?: boolean
+  reducers: ReducersList;
+  removeAfterUnmount?: boolean
 }
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
