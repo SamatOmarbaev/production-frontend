@@ -29,10 +29,15 @@ module.exports = {
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
     'react/jsx-filename-extension': [
-      2, { extensions: ['.js', '.jsx', '.tsx'] }],
+      2, { extensions: ['.js', '.jsx', '.tsx'] },
+    ],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { argsIgnorePattern: '^_' },
+    ],
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'warn',
@@ -42,7 +47,12 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': [
-      'error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['to', 'data-testid'],
+      },
+    ],
     'linebreak-style': 'off',
     'max-len': ['error', { ignoreComments: true, code: 120 }],
     'jsx-a11y/no-static-element-interactions': 'off',

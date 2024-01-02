@@ -17,6 +17,8 @@ class ErrorBoundary
   }
 
   static getDerivedStateFromError(error: Error) {
+    console.log(error);
+
     return { hasError: true };
   }
 

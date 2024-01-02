@@ -7,10 +7,10 @@ import styles from './Input.module.scss';
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 interface InputProps extends HTMLInputProps {
-    className?: string;
-    value?: string;
-    onChange?: (value: string) => void;
-    autoFocus?: boolean
+  className?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  autoFocus?: boolean
 }
 
 export const Input = memo((props: InputProps) => {
@@ -47,7 +47,7 @@ export const Input = memo((props: InputProps) => {
   }, [autoFocus]);
 
   return (
-    <div className={classNames(styles.InputWrapper, {}, [])}>
+    <div className={classNames(styles.InputWrapper, {}, [className])}>
       {placeholder && (
         <div className={styles.placeholder}>
           {`${placeholder}>`}

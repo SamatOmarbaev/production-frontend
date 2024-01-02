@@ -1,0 +1,31 @@
+.item {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  color: var(--inverted-primary-color);
+  text-decoration: none;
+  background: transparent;
+  fill: var(--inverted-primary-color);
+
+  &:hover {
+    color: var(--inverted-secondary-color);
+    fill: var(--inverted-secondary-color);
+  }
+}
+
+.link {
+  width: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+
+.collapsed {
+  .link {
+    width: 0;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+}
