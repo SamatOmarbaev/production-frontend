@@ -11,8 +11,7 @@ export default {
   },
 } as ComponentMeta<typeof ThemeSwitcher>;
 
-/* eslint-disable react/jsx-props-no-spreading */
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
+const Template: ComponentStory<typeof ThemeSwitcher> = () => <ThemeSwitcher />;
 
 export const Light = Template.bind({});
 Light.args = {};

@@ -23,6 +23,7 @@ const AppLink = memo((props: AppLinkProps) => {
     className,
     ...otherProps
   } = props;
+
   return (
     <Link
       to={to}

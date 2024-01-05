@@ -11,8 +11,7 @@ export default {
   },
 } as ComponentMeta<typeof PageError>;
 
-/* eslint-disable react/jsx-props-no-spreading */
-const Template: ComponentStory<typeof PageError> = (args) => <PageError {...args} />;
+const Template: ComponentStory<typeof PageError> = () => <PageError />;
 
 export const Light = Template.bind({});
 Light.args = {};

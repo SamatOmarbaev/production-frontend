@@ -11,8 +11,7 @@ export default {
   },
 } as ComponentMeta<typeof NotFoundPage>;
 
-/* eslint-disable react/jsx-props-no-spreading */
-const Template: ComponentStory<typeof NotFoundPage> = (args: any) => <NotFoundPage {...args} />;
+const Template: ComponentStory<typeof NotFoundPage> = () => <NotFoundPage />;
 
 export const Light = Template.bind({});
 Light.args = {};

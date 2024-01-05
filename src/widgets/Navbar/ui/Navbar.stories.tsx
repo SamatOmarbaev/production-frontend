@@ -12,8 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof Navbar>;
 
-/* eslint-disable react/jsx-props-no-spreading */
-const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
+const Template: ComponentStory<typeof Navbar> = () => <Navbar />;
 
 export const Light = Template.bind({});
 Light.args = {};
