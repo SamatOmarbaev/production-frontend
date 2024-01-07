@@ -3,15 +3,26 @@
   border: 2px solid var(--inverted-bg-color);
 }
 
-.header {
+.avatarWrapper {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: 100%;
 }
 
 .data {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 30px;
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.editing {
+  border: 2px solid var(--inverted-primary-color);
 }

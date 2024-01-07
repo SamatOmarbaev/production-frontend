@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import Input from 'shared/ui/Input/Input';
+import { Input } from 'shared/ui/Input/Input';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/LoginSlice';
