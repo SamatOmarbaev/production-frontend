@@ -12,5 +12,10 @@
     "Укажите валюту": "Specify the currency",
     "Укажите страну": "Specify the country",
     "Произошла ошибка при загрузке профиля": "An error occurred while uploading the profile",
-    "Попробуйте обновить страницу": "Try refreshing the page"
+    "Попробуйте обновить страницу": "Try refreshing the page",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректный регион": "Incorrect region",
+    "Имя и фамилия обязательны": "First and last name are required",
+    "Данные не указаны": "The data is not specified",
+    "Серверная ошибка при сохранении": "Server error when saving"
 }

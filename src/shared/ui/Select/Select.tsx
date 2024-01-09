@@ -3,8 +3,8 @@ import { ChangeEvent, memo, useMemo } from 'react';
 import styles from './Select.module.scss';
 
 export interface SelectOptions {
-    value: string;
-    content: string;
+  value: string;
+  content: string;
 }
 
 interface SelectProps {

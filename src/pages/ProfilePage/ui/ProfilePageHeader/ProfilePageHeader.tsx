@@ -9,7 +9,7 @@ import { useCallback } from 'react';
 import styles from './ProfilePageHeader.module.scss';
 
 interface ProfileHeaderProps {
-    className?: string
+  className?: string
 }
 
 export const ProfilePageHeader = (props: ProfileHeaderProps) => {
@@ -60,7 +60,6 @@ export const ProfilePageHeader = (props: ProfileHeaderProps) => {
               {t('Сохранить')}
             </Button>
           </>
-
         )}
     </div>
   );
