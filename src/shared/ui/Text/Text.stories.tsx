@@ -20,6 +20,13 @@ Primary.args = {
   text: 'Description Description Description Description',
 };
 
+export const Orange = Template.bind({});
+Orange.args = {
+  title: 'Text Text',
+  text: 'Description Description Description Description',
+};
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
+
 export const Error = Template.bind({});
 Error.args = {
   title: 'Text Text',

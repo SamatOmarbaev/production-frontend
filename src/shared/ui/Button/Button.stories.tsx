@@ -45,6 +45,13 @@ OutlineDark.args = {
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const Orange = Template.bind({});
+Orange.args = {
+  children: 'Text',
+  theme: ButtonTheme.OUTLINE,
+};
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
+
 export const BackgroundTheme = Template.bind({});
 BackgroundTheme.args = {
   children: '>',

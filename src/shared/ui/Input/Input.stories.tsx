@@ -1,4 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { Input } from './Input';
 
 export default {
@@ -17,3 +19,17 @@ Primary.args = {
   placeholder: 'Type Text',
   value: '123123',
 };
+
+export const Dark = Template.bind({});
+Dark.args = {
+  placeholder: 'Type Text',
+  value: '123123',
+};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Orange = Template.bind({});
+Orange.args = {
+  placeholder: 'Type Text',
+  value: '123123',
+};
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

@@ -1,0 +1,11 @@
+.ThemeBtn {
+  display: flex;
+}
+
+.ThemeIcon {
+  fill: var(--inverted-primary-color);
+
+  &:hover {
+    fill: var(--inverted-secondary-color);
+  }
+}

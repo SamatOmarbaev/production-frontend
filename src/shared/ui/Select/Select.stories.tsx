@@ -1,4 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import { Select } from './Select';
 
 export default {
@@ -24,3 +26,14 @@ Primary.args = {
     { value: '123434', content: 'Third' },
   ],
 };
+
+export const Orange = Template.bind({});
+Orange.args = {
+  label: 'Укажите значение',
+  options: [
+    { value: '123', content: 'First' },
+    { value: '1233', content: 'Second' },
+    { value: '123434', content: 'Third' },
+  ],
+};
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

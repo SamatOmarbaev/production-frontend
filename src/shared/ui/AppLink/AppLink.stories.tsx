@@ -40,3 +40,10 @@ SecondaryDark.args = {
   theme: AppLinkTheme.SECONDARY,
 };
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Orange = Template.bind({});
+Orange.args = {
+  children: 'Text',
+  theme: AppLinkTheme.SECONDARY,
+};
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
