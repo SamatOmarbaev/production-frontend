@@ -8,7 +8,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
 import { Profile } from '../../model/types/profile';
-import styles from './ProfileCard.module.scss';
+import cls from './ProfileCard.module.scss';
 
 export interface ProfileCardProps {
   className?: string;
@@ -37,7 +37,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(styles.ProfileCard, { [styles.loading]: true }, [className])}>
+      <div className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
         <Loader />
       </div>
     );
@@ -45,7 +45,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   if (error) {
     return (
-      <div className={classNames(styles.ProfileCard, {}, [className, styles.error])}>
+      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
         <Text
           theme={TextTheme.ERROR}
           align={TextAlign.CENTER}
@@ -57,56 +57,56 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
   }
 
   const mods: Mods = {
-    [styles.editing]: !readOnly,
+    [cls.editing]: !readOnly,
   };
 
   return (
-    <div className={classNames(styles.ProfileCard, mods, [className])}>
-      <div className={styles.data}>
+    <div className={classNames(cls.ProfileCard, mods, [className])}>
+      <div className={cls.data}>
         {data?.avatar && (
-          <div className={styles.avatarWrapper}>
+          <div className={cls.avatarWrapper}>
             <Avatar src={data?.avatar} />
           </div>
         )}
         <Input
           value={data?.first}
           placeholder={t('Ваше имя')}
-          className={styles.input}
+          className={cls.input}
           onChange={onChangeFirstName}
           readOnly={readOnly}
         />
         <Input
           value={data?.lastname}
           placeholder={t('Ваша фамилия')}
-          className={styles.input}
+          className={cls.input}
           onChange={onChangeLastName}
           readOnly={readOnly}
         />
         <Input
           value={data?.age}
           placeholder={t('Ваш возраст')}
-          className={styles.input}
+          className={cls.input}
           onChange={onChangeAge}
           readOnly={readOnly}
         />
         <Input
           value={data?.city}
           placeholder={t('Ваш город')}
-          className={styles.input}
+          className={cls.input}
           onChange={onChangeCity}
           readOnly={readOnly}
         />
         <Input
           value={data?.username}
           placeholder={t('Введите имя пользователя')}
-          className={styles.input}
+          className={cls.input}
           onChange={onChangeUsername}
           readOnly={readOnly}
         />
         <Input
           value={data?.avatar}
           placeholder={t('Введите ссылку на аватар')}
-          className={styles.input}
+          className={cls.input}
           onChange={onChangeAvatar}
           readOnly={readOnly}
         />

@@ -4,7 +4,7 @@ import { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { SidebarItemsList } from '../../model/items';
-import styles from './Sidebar.module.scss';
+import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
@@ -29,24 +29,24 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   return (
     <div
       data-testid="sidebar"
-      className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
       ])}
     >
       <Button
         data-testid="sidebar-toggle"
         onClick={toggleSidebar}
-        className={styles.collapsedBtn}
+        className={cls.collapsedBtn}
         theme={ButtonTheme.BACKGROUND_INVERTED}
         square
         size={ButtonSize.L}
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <div className={styles.items}>
+      <div className={cls.items}>
         {itemList}
       </div>
-      <div className={styles.switchers}>
+      <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
       </div>

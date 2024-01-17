@@ -3,7 +3,7 @@ import {
 } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 
-import styles from './Button.module.scss';
+import cls from './Button.module.scss';
 
 export enum ButtonTheme {
   CLEAR = 'clear',
@@ -40,15 +40,15 @@ export const Button = memo((props: ButtonProps) => {
   } = props;
 
   const mods: Mods = {
-    [styles.square]: square,
-    [styles[size]]: true,
-    [styles.disabled]: disabled,
+    [cls.square]: square,
+    [cls[size]]: true,
+    [cls.disabled]: disabled,
   };
 
   return (
     <button
       type="button"
-      className={classNames(styles.Button, mods, [className, styles[theme]])}
+      className={classNames(cls.Button, mods, [className, cls[theme]])}
       disabled={disabled}
       {...otherProps}
     >

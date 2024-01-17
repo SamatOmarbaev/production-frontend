@@ -20,6 +20,10 @@
   position: absolute;
   right: -32px;
   bottom: 32px;
+
+  &:hover {
+    color: var(--inverted-secondary-color);
+  }
 }
 
 .items {

@@ -13,7 +13,7 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import styles from './LoginForm.module.scss';
+import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
   className?: string;
@@ -53,7 +53,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
       removeAfterUnmount
       reducers={initialReducers}
     >
-      <div className={classNames(styles.LoginForm, {}, [className])}>
+      <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')} />
         {error && <Text text={t('Вы ввели неправильный логин или пароль')} theme={TextTheme.ERROR} />}
         <Input
@@ -70,7 +70,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
           value={password}
         />
         <Button
-          className={styles.loginBtn}
+          className={cls.loginBtn}
           theme={ButtonTheme.OUTLINE}
           onClick={onLoginClick}
           disabled={isLoading}

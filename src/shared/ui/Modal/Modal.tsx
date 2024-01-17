@@ -3,7 +3,7 @@ import React, {
   FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
-import styles from './Modal.module.scss';
+import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 
 interface ModalProps {
@@ -65,8 +65,8 @@ export const Modal: FC<ModalProps> = (props) => {
   }, [isOpen, onKeyDowm]);
 
   const mods: Mods = {
-    [styles.opened]: isOpen,
-    [styles.isClosing]: isClosing,
+    [cls.opened]: isOpen,
+    [cls.isClosing]: isClosing,
   };
 
   if (lazy && !isMounted) {
@@ -75,10 +75,10 @@ export const Modal: FC<ModalProps> = (props) => {
 
   return (
     <Portal container={container}>
-      <div className={classNames(styles.Modal, mods, [className, theme])}>
-        <div className={classNames(styles.overlay)} onClick={closeHandler}>
+      <div className={classNames(cls.Modal, mods, [className, theme])}>
+        <div className={classNames(cls.overlay)} onClick={closeHandler}>
           <div
-            className={classNames(styles.content)}
+            className={classNames(cls.content)}
             onClick={onContentClick}
           >
             {children}

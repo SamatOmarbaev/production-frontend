@@ -3,13 +3,13 @@ import { Select } from 'shared/ui/Select/Select';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Country } from '../../model/types/country';
-import styles from './CountrySelect.module.scss';
+import cls from './CountrySelect.module.scss';
 
 interface CountrySelectProps {
-    className?: string;
-    value?: Country;
-    onChange?: (value: Country) => void;
-    readOnly?: boolean;
+  className?: string;
+  value?: Country;
+  onChange?: (value: Country) => void;
+  readOnly?: boolean;
 }
 
 const options = [
@@ -30,7 +30,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
   }, [onChange]);
 
   const mods: Mods = {
-    [styles.readOnly]: readOnly,
+    [cls.readOnly]: readOnly,
   };
 
   return (

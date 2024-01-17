@@ -1,4 +1,5 @@
 {
     "Страница статей": "Articles page",
-    "Страница статьи": "Article page"
+    "Статья не найдена": "Article not found",
+    "Произошла ошибка при загрузке статьи": "An error occurred while uploading the article"
 }

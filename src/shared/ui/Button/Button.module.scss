@@ -2,6 +2,10 @@
   padding: 6px 15px;
   color: var(--primary-color);
   cursor: pointer;
+
+  &:hover {
+    color: var(--secondary-color);
+  }
 }
 
 .clear,

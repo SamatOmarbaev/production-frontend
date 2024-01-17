@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { getProfileReadOnly, profileActions, updateProfileData } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback } from 'react';
-import styles from './ProfilePageHeader.module.scss';
+import cls from './ProfilePageHeader.module.scss';
 
 interface ProfileHeaderProps {
   className?: string
@@ -31,12 +31,12 @@ export const ProfilePageHeader = (props: ProfileHeaderProps) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(styles.ProfilePageHeader, {}, [className])}>
+    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
       <Text title={t('Профиль пользователя')} />
       {readOnly
         ? (
           <Button
-            className={styles.editBtn}
+            className={cls.editBtn}
             theme={ButtonTheme.OUTLINE}
             onClick={onEdit}
           >
@@ -46,14 +46,14 @@ export const ProfilePageHeader = (props: ProfileHeaderProps) => {
         : (
           <>
             <Button
-              className={styles.editBtn}
+              className={cls.editBtn}
               theme={ButtonTheme.OUTLINE_RED}
               onClick={onCancelEdit}
             >
               {t('Отменить')}
             </Button>
             <Button
-              className={styles.saveBtn}
+              className={cls.saveBtn}
               theme={ButtonTheme.OUTLINE}
               onClick={onSave}
             >

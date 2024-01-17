@@ -3,7 +3,7 @@ import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { Currency } from '../../model/types/currency';
-import styles from './CurrencySelect.module.scss';
+import cls from './CurrencySelect.module.scss';
 
 interface CurrencySelectProps {
   className?: string;
@@ -29,7 +29,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
   }, [onChange]);
 
   const mods: Mods = {
-    [styles.readOnly]: readOnly,
+    [cls.readOnly]: readOnly,
   };
 
   return (
