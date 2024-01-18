@@ -1,6 +1,7 @@
 .Code {
   position: relative;
   padding: 20px;
+  overflow-x: auto;
   background: var(--code-bg);
   border: 1px solid var(--primary-color);
 }
