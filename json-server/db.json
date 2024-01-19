@@ -34,7 +34,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -115,6 +117,54 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "asd",
+      "id": "7-2kxIE"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "adad",
+      "id": "5rU0aI7"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asd",
+      "id": "Ke7MF1o"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "hello world",
+      "id": "Ai6hZ9m"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asd",
+      "id": "br90c4C"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asd",
+      "id": "dD2cHCA"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "h",
+      "id": "Vgx72eh"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asd",
+      "id": "4EB24vb"
     }
   ],
   "users": [
@@ -133,14 +183,28 @@
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
     }
   ],
-  "profile": {
-    "first": "Самат",
-    "lastname": "Омарбаев",
-    "age": 24,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Самат",
+      "lastname": "Омарбаев",
+      "age": 24,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Chelsea",
+      "lastname": "Павлов",
+      "age": 25,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "kir",
+      "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
+    }
+  ]
 }
