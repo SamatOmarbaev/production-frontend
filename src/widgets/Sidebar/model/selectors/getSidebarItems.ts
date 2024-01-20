@@ -21,7 +21,6 @@ export const getSidebarItems = createSelector(
         Icon: AboutIcon,
         text: 'О нас',
       },
-
     ];
 
     if (userData) {
