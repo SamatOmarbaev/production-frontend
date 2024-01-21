@@ -6,16 +6,16 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkelton } from '../ArticleListItem/ArticleListItemSkeleton';
 
 interface ArticleListProps {
-   className?: string;
-   articles: Article[];
-   isLoading?: boolean;
-   view?: ArticleView;
+  className?: string;
+  articles: Article[];
+  isLoading?: boolean;
+  view?: ArticleView;
 }
 
 const getSkeletons = (view: ArticleView) => (
   new Array(view === ArticleView.LIST ? 9 : 3)
     .fill(0)
-    .map((item, index) => (
+    .map((_, index) => (
       <ArticleListItemSkelton view={view} key={index} />
     ))
 );
