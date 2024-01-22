@@ -12,6 +12,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { CommentForm } from 'features/AddCommentForm';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { PageWrapper } from 'shared/ui/PageWrapper/PageWrapper';
 import { addCommentForArticle } from '../../model/services/addCommentArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/getComments';
@@ -47,15 +48,15 @@ const ArticlesDetailPage: FC<ArticlesDetailPageProps> = (props) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
+      <PageWrapper className={classNames(cls.ArticlesDetailPage, {}, [className])}>
         {t('Статья не найдена')}
-      </div>
+      </PageWrapper>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
+      <PageWrapper className={classNames(cls.ArticlesDetailPage, {}, [className])}>
         <Button onClick={onBack}>
           {t('Назад к списку')}
         </Button>
@@ -66,7 +67,7 @@ const ArticlesDetailPage: FC<ArticlesDetailPageProps> = (props) => {
           isLoading={commentsIsLoading}
           comments={comments}
         />
-      </div>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 };

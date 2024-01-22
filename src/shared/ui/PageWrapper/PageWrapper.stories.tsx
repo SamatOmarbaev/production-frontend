@@ -1,0 +1,17 @@
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { PageWrapper } from './PageWrapper';
+
+export default {
+  title: 'shared/PageWrapper',
+  component: PageWrapper,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof PageWrapper>;
+
+const Template: ComponentStory<typeof PageWrapper> = (args) => <PageWrapper {...args} />;
+
+export const Normal = Template.bind({});
+Normal.args = {
+
+};
