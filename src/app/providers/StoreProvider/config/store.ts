@@ -3,6 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
+import { uIReducer } from 'features/UI';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './ReducerManager';
 
@@ -13,6 +14,7 @@ export function createReduxStore(
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     user: userReducer,
+    ui: uIReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);

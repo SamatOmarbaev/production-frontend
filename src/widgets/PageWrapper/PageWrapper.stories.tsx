@@ -1,8 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { PageWrapper } from './PageWrapper';
 
 export default {
-  title: 'shared/PageWrapper',
+  title: 'widgets/PageWrapper',
   component: PageWrapper,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -12,6 +13,5 @@ export default {
 const Template: ComponentStory<typeof PageWrapper> = (args) => <PageWrapper {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {
-
-};
+Normal.args = {};
+Normal.decorators = [StoreDecorator({})];

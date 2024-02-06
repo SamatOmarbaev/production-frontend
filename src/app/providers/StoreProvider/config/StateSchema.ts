@@ -7,11 +7,13 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { CommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
+import { UISchema } from 'features/UI';
 import { ArticleDetailsCommentSchema } from 'pages/ArticlesDetailPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
   user: UserSchema;
+  ui: UISchema
 
   // Асинхронные редюсеры
   loginForm?: LoginSchema;
