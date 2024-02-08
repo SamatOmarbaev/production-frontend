@@ -51,7 +51,7 @@ export const PageWrapper: FC<PageWrapperProps> = (props) => {
       onScroll={onScroll}
     >
       {children}
-      <div ref={triggerRef} />
+      {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
     </section>
   );
 };

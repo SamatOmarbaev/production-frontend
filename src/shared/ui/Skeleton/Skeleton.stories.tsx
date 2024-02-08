@@ -19,12 +19,12 @@ Normal.args = {
   height: 200,
 };
 
-export const Circle = Template.bind({});
-Circle.args = {
-  border: '50%',
-  width: '100px',
-  height: '100px',
-};
+// export const Circle = Template.bind({});
+// Circle.args = {
+//   border: '50%',
+//   width: '100px',
+//   height: '100px',
+// };
 
 export const NormalDark = Template.bind({});
 NormalDark.args = {

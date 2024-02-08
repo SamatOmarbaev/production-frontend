@@ -1,7 +1,20 @@
 {
     "Страница статей": "Articles page",
     "Статья не найдена": "Article not found",
+    "Статьи не найдена": "Articles not found",
     "Произошла ошибка при загрузке статьи": "An error occurred while uploading the article",
     "Комментарии": "Comments",
-    "Назад к списку": "Back to the list"
+    "Назад к списку": "Back to the list",
+    "Сортировка по": "Sorting by",
+    "Поиск": "Search",
+    "по": "by",
+    "возрастанию": "ascending",
+    "убыванию": "descending",
+    "дате создания": "date of creation",
+    "названию": "title",
+    "просмотрам": "views",
+    "Айти": "IT",
+    "Экономика": "Economics",
+    "Все статьи": "All articles",
+    "Наука": "Science"
 }
