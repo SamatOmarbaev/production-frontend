@@ -2,14 +2,14 @@ import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/f
 import { ArticleDetailsCommentSchema } from '../types/ArticleDetailsCommentsSchema';
 import { articleDetailsCommentReducer } from './articleDetailsCommentSlice';
 
-const data = {
-  id: '1',
-  text: 'admin',
-  user: {
-    id: '1',
-    username: 'kir',
-  },
-};
+// const data = {
+//   id: '1',
+//   text: 'admin',
+//   user: {
+//     id: '1',
+//     username: 'kir',
+//   },
+// };
 
 describe('articleDetailsCommentSlice.test', () => {
   test('test update article service pending', () => {

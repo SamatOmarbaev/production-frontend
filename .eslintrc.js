@@ -50,11 +50,11 @@ module.exports = {
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['to', 'data-testid'],
+        ignoreAttribute: ['to', 'data-testid', 'target'],
       },
     ],
     'linebreak-style': 'off',
-    'max-len': ['error', { ignoreComments: true, code: 120 }],
+    'max-len': ['error', { ignoreComments: true, code: 150 }],
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/alt-text': 'off',
