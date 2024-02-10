@@ -6,6 +6,7 @@
     "Комментарии": "Comments",
     "Рекомендуем": "Recommend",
     "Назад к списку": "Back to the list",
+    "Редактировать": "Edit",
     "Сортировка по": "Sorting by",
     "Поиск": "Search",
     "по": "by",
@@ -17,5 +18,7 @@
     "Айти": "IT",
     "Экономика": "Economics",
     "Все статьи": "All articles",
-    "Наука": "Science"
+    "Наука": "Science",
+    "Редактирование статьи с ID = ": "Editing an article with an ID = ",
+    "Создание новой статьи": "Creating a new article"
 }

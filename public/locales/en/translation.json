@@ -18,5 +18,6 @@
   "Вы ввели неправильный логин или пароль": "You entered the wrong username or password",
   "Комментарии отсутствуют": "There are no comments",
   "Введите текст комментария": "Enter the comment text",
-  "Отправить": "Send"
+  "Отправить": "Send",
+  "Создать статью": "Create an article"
 }
