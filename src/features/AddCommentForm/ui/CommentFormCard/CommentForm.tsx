@@ -6,8 +6,9 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HStack } from 'shared/ui/Stack';
 import { CommentFormActions, CommentFormReducer } from '../../model/slice/addCommentFormSlice';
-import { getCommentFormError, getCommentFormText } from '../../model/selectors/addCommentFormSelectors';
+import { getCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cls from './CommentForm.module.scss';
 
 export interface CommentFormProps {
@@ -23,7 +24,6 @@ const CommentForm = memo((props: CommentFormProps) => {
   const { className, onSendComment } = props;
   const { t } = useTranslation();
   const text = useSelector(getCommentFormText);
-  const error = useSelector(getCommentFormError);
   const dispatch = useAppDispatch();
 
   const onCommentChange = useCallback((value: string) => {
@@ -37,7 +37,7 @@ const CommentForm = memo((props: CommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.AddCommentForm, {}, [className])}>
+      <HStack max justify="between" className={classNames(cls.AddCommentForm, {}, [className])}>
         <Input
           placeholder={t('Введите текст комментария')}
           value={text}
@@ -50,7 +50,7 @@ const CommentForm = memo((props: CommentFormProps) => {
         >
           {t('Отправить')}
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 });

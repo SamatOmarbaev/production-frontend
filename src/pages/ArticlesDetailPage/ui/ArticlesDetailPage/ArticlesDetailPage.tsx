@@ -11,6 +11,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { CommentForm } from 'features/AddCommentForm';
 import { PageWrapper } from 'widgets/PageWrapper/PageWrapper';
+import { VStack } from 'shared/ui/Stack';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { fetchArticleRecomendations } from '../../model/services/fetchArticleRecomendations/fetchArticleRecomendations';
 import { getRecomendationsIsLoading } from '../../model/selectors/getRecomandations';
@@ -60,21 +61,23 @@ const ArticlesDetailPage: FC<ArticlesDetailPageProps> = (props) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <PageWrapper className={classNames(cls.ArticlesDetailPage, {}, [className])}>
-        <ArticlesDetailPageHeader />
-        <ArticleDetails id={id} />
-        <Text size={TextSize.L} title={t('Рекомендуем')} className={cls.commentTitle} />
-        <ArticleList
-          target="_blank"
-          articles={recomendations}
-          isLoading={recomendationsIsLoading}
-          className={cls.recomendations}
-        />
-        <Text size={TextSize.L} title={t('Комментарии')} className={cls.commentTitle} />
-        <CommentForm className={cls.commentForm} onSendComment={onSendComment} />
-        <CommentList
-          isLoading={commentsIsLoading}
-          comments={comments}
-        />
+        <VStack gap="16" max>
+          <ArticlesDetailPageHeader />
+          <ArticleDetails id={id} />
+          <Text size={TextSize.L} title={t('Рекомендуем')} />
+          <ArticleList
+            target="_blank"
+            articles={recomendations}
+            isLoading={recomendationsIsLoading}
+            className={cls.recomendations}
+          />
+          <Text size={TextSize.L} title={t('Комментарии')} />
+          <CommentForm onSendComment={onSendComment} />
+          <CommentList
+            isLoading={commentsIsLoading}
+            comments={comments}
+          />
+        </VStack>
       </PageWrapper>
     </DynamicModuleLoader>
   );
