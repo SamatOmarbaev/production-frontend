@@ -1,9 +1,7 @@
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
-import { Select } from 'shared/ui/Select/Select';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 import { Country } from '../../model/types/country';
-import cls from './CountrySelect.module.scss';
 
 interface CountrySelectProps {
   className?: string;
@@ -29,18 +27,16 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     onChange?.(value as Country);
   }, [onChange]);
 
-  const mods: Mods = {
-    [cls.readOnly]: readOnly,
-  };
-
   return (
-    <Select
-      className={classNames('', mods, [className])}
-      label={t('Укажите страну')}
-      options={options}
-      value={value}
+    <ListBox
       onChange={onChangeHandler}
+      initialValue={value}
+      defaulValue={t('Укажите страну')}
+      items={options}
+      className={className}
       readOnly={readOnly}
+      direction="top"
+      label={t('Укажите страну')}
     />
   );
 });
