@@ -7,15 +7,9 @@
   background-color: var(--inverted-bg-color);
 }
 
-.links {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
+.links,
+.dropdown {
   margin-left: auto;
-
-  &:hover {
-    color: var(--inverted-secondary-color);
-  }
 }
 
 .appName {

@@ -8,6 +8,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [
+    (Story) => <div style={{ padding: 100 }}><Story /></div>,
+  ],
 } as ComponentMeta<typeof ListBox>;
 
 const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
@@ -24,3 +27,43 @@ Normal.args = {
   defaulValue: 'выберите элемент',
 };
 Normal.decorators = [StoreDecorator({})];
+
+export const TopLeft = Template.bind({});
+TopLeft.args = {
+  direction: 'top left',
+  initialValue: '123',
+  items: [
+    { content: '1asfasfasf23', value: '123' },
+    { content: '1asfasfasf21233', value: '1232' },
+  ],
+};
+
+export const TopRight = Template.bind({});
+TopRight.args = {
+  direction: 'top right',
+  initialValue: '123',
+  items: [
+    { content: '1asfasfasf23', value: '123' },
+    { content: '1asfasfasf21233', value: '1232' },
+  ],
+};
+
+export const BottomLeft = Template.bind({});
+BottomLeft.args = {
+  direction: 'bottom left',
+  initialValue: '123',
+  items: [
+    { content: '1asfasfasf23', value: '123' },
+    { content: '1asfasfasf21233', value: '1232' },
+  ],
+};
+
+export const BottomRight = Template.bind({});
+BottomRight.args = {
+  direction: 'bottom right',
+  initialValue: '123',
+  items: [
+    { content: '1asfasfasf23', value: '123' },
+    { content: '1asfasfasf21233', value: '1232' },
+  ],
+};

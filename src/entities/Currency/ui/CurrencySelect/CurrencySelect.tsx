@@ -34,7 +34,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
       defaulValue={t('Укажите валюту')}
       className={className}
       readOnly={readOnly}
-      direction="top"
+      direction="top right"
       label={t('Укажите валюту')}
     />
   );
