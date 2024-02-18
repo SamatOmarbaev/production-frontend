@@ -20,5 +20,6 @@
     "Все статьи": "All articles",
     "Наука": "Science",
     "Редактирование статьи с ID = ": "Editing an article with an ID = ",
-    "Создание новой статьи": "Creating a new article"
+    "Создание новой статьи": "Creating a new article",
+    "Произошла ошибка при загрузке статей": "An error occurred while uploading articles"
 }

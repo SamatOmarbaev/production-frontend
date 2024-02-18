@@ -17,5 +17,6 @@
     "Некорректный регион": "Incorrect region",
     "Имя и фамилия обязательны": "First and last name are required",
     "Данные не указаны": "The data is not specified",
-    "Серверная ошибка при сохранении": "Server error when saving"
+    "Серверная ошибка при сохранении": "Server error when saving",
+    "Профиль не найден": "Profile not found"
 }

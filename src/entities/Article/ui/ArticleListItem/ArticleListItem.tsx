@@ -1,6 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { IconWrapper } from 'shared/ui/IconWrapper/IconWrapper';
 import { Card } from 'shared/ui/Card/Card';
@@ -9,6 +9,7 @@ import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import AppLink from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { HStack } from 'shared/ui/Stack';
 import {
   Article, ArticleBlockType, ArticleTextBlock, ArticleView,
 } from '../../model/types/article';
@@ -32,7 +33,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const views = (
     <>
       <Text text={String(article.views)} className={cls.views} />
-      <IconWrapper Svg={EyeIcon} className={cls.icon} />
+      <IconWrapper Svg={EyeIcon} />
     </>
   );
 
@@ -84,11 +85,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           <img src={article.img} alt={article.title} className={cls.image} />
           <Text text={article.createdAt} className={cls.date} />
         </div>
-        <div className={cls.infoWrapper}>
+        <HStack align="center">
           {types}
           {views}
-        </div>
-        <Text title={article.title} className={cls.title} />
+        </HStack>
+        <Text size={TextSize.S} title={article.title} className={cls.title} />
       </Card>
     </AppLink>
   );
