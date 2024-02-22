@@ -16,6 +16,7 @@
   position: absolute;
   right: -32px;
   bottom: 32px;
+  z-index: 100000;
 
   &:hover {
     color: var(--inverted-secondary-color);
