@@ -18,20 +18,20 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm install --location=global
+        run: npm install
       - name: build production project
-        run: npm run build:prod --location=global
+        run: npm run build:prod
       - name: linting typescript
-        run: npm run lint:ts --location=global
+        run: npm run lint:ts
         if: always()
       - name: linting css
-        run: npm run lint:scss --location=global
+        run: npm run lint:scss
         if: always()
       - name: unit testing
-        run: npm run test:unit --location=global
+        run: npm run test:unit
         if: always()
       - name: build storybook
-        run: npm run storybook:build --location=global
+        run: npm run storybook:build
         if: always()
       # - name: screenshot testing
       #   run: npm run test:ui:ci
