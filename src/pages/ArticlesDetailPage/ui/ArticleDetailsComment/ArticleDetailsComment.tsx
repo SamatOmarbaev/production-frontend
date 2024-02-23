@@ -15,7 +15,7 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 
 interface ArticleDetailsCommentProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const ArticleDetailsComment: FC<ArticleDetailsCommentProps> = (props) => {
