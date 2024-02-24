@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-  ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector, ArticlesTypeTabs,
+  ArticleSortField, ArticleSortSelector, ArticleType, ArticleView, ArticleViewSelector, ArticlesTypeTabs,
 } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -10,7 +10,6 @@ import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import { SortOrder } from 'shared/types/sortOrder';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleType } from 'entities/Article/model/types/article';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType, getArticlesView,

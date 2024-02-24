@@ -14,8 +14,9 @@ import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import { IconWrapper } from 'shared/ui/IconWrapper/IconWrapper';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { HStack, VStack } from 'shared/ui/Stack';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import {
   getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';

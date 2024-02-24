@@ -4,13 +4,13 @@ import GridIcon from 'shared/assets/icons/tiled-24-24.svg';
 import ListIcon from 'shared/assets/icons/list-24-24.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { IconWrapper } from 'shared/ui/IconWrapper/IconWrapper';
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
-   className?: string;
-   view: ArticleView;
-   onViewClick?: (view: ArticleView) => void;
+  className?: string;
+  view: ArticleView;
+  onViewClick?: (view: ArticleView) => void;
 }
 
 const viewTypes = [
