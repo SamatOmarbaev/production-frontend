@@ -7,11 +7,11 @@ import { ArticleSortField } from '../../model/consts/articleConsts';
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
-   className?: string;
-   sort: ArticleSortField;
-   onChangeSort: (newSort: ArticleSortField) => void;
-   order: SortOrder;
-   onChangeOrder: (newOrder: SortOrder) => void;
+  className?: string;
+  sort: ArticleSortField;
+  onChangeSort: (newSort: ArticleSortField) => void;
+  order: SortOrder;
+  onChangeOrder: (newOrder: SortOrder) => void;
 }
 
 export const ArticleSortSelector: FC<ArticleSortSelectorProps> = (props) => {
