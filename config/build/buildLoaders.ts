@@ -23,33 +23,15 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
   const cssLoader = buildCssLoaders(isDev);
 
-  // const babelLoader = {
-  //   test: /\.(js|jsx|tsx)$/,
-  //   exclude: /node_modules/,
-  //   use: {
-  //     loader: 'babel-loader',
-  //     options: {
-  //       presets: ['@babel/preset-env'],
-  //       plugins: [
-  //         [
-  //           'i18next-extract',
-  //           {
-  //             locales: ['ru', 'en'],
-  //             keyAsDefaultValue: true,
-  //           },
-  //         ],
-  //       ],
-  //     },
-  //   },
-  // };
-  const babelLoader = buildBabelLoaders(options);
+  const codeBabelLoader = buildBabelLoaders({ ...options, isTsx: false });
+  const tsxCodeBabelLoader = buildBabelLoaders({ ...options, isTsx: true });
 
   // Если не используем typescript, то нужен babel-loader
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  };
+  // const typescriptLoader = {
+  //   test: /\.tsx?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/,
+  // };
 
-  return [svgLoader, babelLoader, typescriptLoader, cssLoader, fileLoader];
+  return [svgLoader, codeBabelLoader, tsxCodeBabelLoader, cssLoader, fileLoader];
 }
