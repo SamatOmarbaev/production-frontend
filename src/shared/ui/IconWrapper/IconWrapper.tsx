@@ -4,13 +4,14 @@ import cls from './IconWrapper.module.scss';
 
 interface IconWrapperProps {
   className?: string;
-  Svg: React.VFC<React.SVGProps<SVGSVGElement>>
+  Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+  inverted?: boolean;
 }
 
 export const IconWrapper = memo((props: IconWrapperProps) => {
-  const { className, Svg } = props;
+  const { className, Svg, inverted } = props;
 
   return (
-    <Svg className={classNames(cls.iconWrapper, {}, [className])} />
+    <Svg className={classNames(inverted ? cls.inverted : cls.iconWrapper, {}, [className])} />
   );
 });

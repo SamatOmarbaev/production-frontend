@@ -5,8 +5,10 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 import cls from './ListBox.module.scss';
-import { Button } from '../Button/Button';
-import { HStack } from '../Stack';
+import { Button } from '../../../Button/Button';
+import { HStack } from '../../../Stack';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface ListBoxItem {
   value?: string;
@@ -25,13 +27,6 @@ export interface ListBoxProps {
   label?: string;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionBottomLeft,
-  'bottom right': cls.optionBottomRight,
-  'top left': cls.optionTopLeft,
-  'top right': cls.optionTopRight,
-};
-
 export const ListBox: FC<ListBoxProps> = (props) => {
   const {
     items, className, initialValue, defaulValue, onChange, readOnly, direction = 'bottom right', label,
@@ -45,11 +40,11 @@ export const ListBox: FC<ListBoxProps> = (props) => {
       <HListBox
         disabled={readOnly}
         as="div"
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
         value={initialValue}
         onChange={onChange}
       >
-        <HListBox.Button className={cls.trigger}>
+        <HListBox.Button className={popupCls.trigger}>
           <Button disabled={readOnly}>
             {initialValue ?? defaulValue}
           </Button>
@@ -66,7 +61,7 @@ export const ListBox: FC<ListBoxProps> = (props) => {
                 <li
                   className={classNames(
                     cls.item,
-                    { [cls.active]: active, [cls.disabled]: item.disabled },
+                    { [popupCls.active]: active, [cls.disabled]: item.disabled },
                   )}
                 >
                   {selected && '!!!'}
