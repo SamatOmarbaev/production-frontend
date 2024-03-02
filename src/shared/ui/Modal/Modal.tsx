@@ -1,8 +1,9 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import {
-  FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
+  FC, ReactNode,
 } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
@@ -16,50 +17,13 @@ interface ModalProps {
   lazy?: boolean;
 }
 
-const ANIMATION_DELAY = 300;
-
 export const Modal: FC<ModalProps> = (props) => {
   const {
     className, children, isOpen, onClose, container, lazy,
   } = props;
 
-  const [isClosing, setIsClosing] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+  const { close, isClosing, isMounted } = useModal({ animationDelay: 500, onClose, isOpen });
   const { theme } = useTheme();
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
-
-  const closeHandler = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      timerRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, ANIMATION_DELAY);
-    }
-  }, [onClose]);
-
-  const onKeyDowm = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler();
-    }
-  }, [closeHandler]);
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDowm);
-    }
-
-    return () => {
-      clearTimeout(timerRef.current);
-      window.removeEventListener('keydown', onKeyDowm);
-    };
-  }, [isOpen, onKeyDowm]);
 
   const mods: Mods = {
     [cls.opened]: isOpen,
@@ -73,7 +37,7 @@ export const Modal: FC<ModalProps> = (props) => {
   return (
     <Portal container={container}>
       <div className={classNames(cls.Modal, mods, [className, theme])}>
-        <Overlay onClick={closeHandler} />
+        <Overlay onClick={close} />
         <div
           className={classNames(cls.content)}
         >
