@@ -7,6 +7,7 @@ import { Notificationlist } from 'entities/Notification';
 import Notification from 'shared/assets/icons/notification.svg';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { BrowserView, MobileView } from 'react-device-detect';
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
@@ -44,9 +45,11 @@ export const NotificationButton: FC<NotificationButtonProps> = (props) => {
       </BrowserView>
       <MobileView>
         {trigger}
-        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-          <Notificationlist />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+            <Notificationlist />
+          </Drawer>
+        </AnimationProvider>
       </MobileView>
     </div>
   );
