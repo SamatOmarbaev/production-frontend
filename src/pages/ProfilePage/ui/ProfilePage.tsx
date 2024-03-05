@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { PageWrapper } from 'widgets/PageWrapper/PageWrapper';
-import { EditableProfileCard } from 'features/editableProfileCard';
 import { useParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { PageWrapper } from '@/widgets/PageWrapper/PageWrapper';
+import { EditableProfileCard } from '@/features/editableProfileCard';
 
 const ProfilePage = memo(() => {
   const { id } = useParams<{id: string}>();
