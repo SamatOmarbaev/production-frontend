@@ -1,7 +1,6 @@
 import { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/Card/Card';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text/Text';
@@ -17,16 +16,17 @@ interface RatingCardProps {
   feedBackTitle?: string;
   hasFeedBack?: boolean;
   onCancel?: (starsCount: number) => void;
-  onAccept?: (starsCount: number, feedBack?: string) => void
+  onAccept?: (starsCount: number, feedBack?: string) => void;
+  rate?: number;
 }
 
 export const RatingCard: FC<RatingCardProps> = (props) => {
   const {
-    className, title, feedBackTitle, hasFeedBack, onCancel, onAccept,
+    className, title, feedBackTitle, hasFeedBack, onCancel, onAccept, rate = 0,
   } = props;
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starsCount, setStarsCount] = useState(0);
+  const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
 
   const onSelectedStars = useCallback((selectedStarsCount: number) => {
@@ -56,10 +56,10 @@ export const RatingCard: FC<RatingCardProps> = (props) => {
   );
 
   return (
-    <Card className={classNames('', {}, [className])}>
+    <Card max className={className}>
       <VStack align="center" gap="16">
-        <Text title={title} />
-        <StarRating size={40} onSelect={onSelectedStars} />
+        <Text title={starsCount ? t('Спасибо за оценку') : title} />
+        <StarRating selectedStars={starsCount} size={40} onSelect={onSelectedStars} />
       </VStack>
       <BrowserView>
         <Modal isOpen={isModalOpen} lazy>

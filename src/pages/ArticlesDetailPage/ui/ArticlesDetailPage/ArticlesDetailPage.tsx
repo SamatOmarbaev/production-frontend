@@ -10,6 +10,7 @@ import { articleDetailsPageReducer } from '../../model/slice';
 import cls from './ArticlesDetailPage.module.scss';
 import { ArticlesDetailPageHeader } from '../ArticlesDetailPageHeader/ArticlesDetailPageHeader';
 import { ArticleDetailsComment } from '../ArticleDetailsComment/ArticleDetailsComment';
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticlesDetailPageProps {
   className?: string;
@@ -23,12 +24,17 @@ const ArticlesDetailPage: FC<ArticlesDetailPageProps> = (props) => {
   const { className } = props;
   const { id } = useParams<{id: string}>();
 
+  if (!id) {
+    return null;
+  }
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <PageWrapper className={classNames(cls.ArticlesDetailPage, {}, [className])}>
         <VStack gap="16" max>
           <ArticlesDetailPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
           <ArticleRecomendationsList />
           <ArticleDetailsComment id={id} />
         </VStack>
