@@ -44,7 +44,7 @@ export const ListBox: FC<ListBoxProps> = (props) => {
         value={initialValue}
         onChange={onChange}
       >
-        <HListBox.Button className={popupCls.trigger}>
+        <HListBox.Button as="div" className={popupCls.trigger}>
           <Button disabled={readOnly}>
             {initialValue ?? defaulValue}
           </Button>
