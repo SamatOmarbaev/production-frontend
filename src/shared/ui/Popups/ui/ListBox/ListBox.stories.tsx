@@ -3,7 +3,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ListBox } from './ListBox';
 
 export default {
-  title: 'shared/ListBox',
+  title: 'shared/popups/ListBox',
   component: ListBox,
   argTypes: {
     backgroundColor: { control: 'color' },
