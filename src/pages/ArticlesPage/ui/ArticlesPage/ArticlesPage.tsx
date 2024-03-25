@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { PageWrapper } from '@/widgets/PageWrapper/PageWrapper';
+import { PageWrapper } from '@/widgets/PageWrapper';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
