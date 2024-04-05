@@ -1,8 +1,8 @@
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsPageReducer } from '@/pages/ArticlesDetailPage';
-import { profileReducer } from '@/features/editableProfileCard';
+import { articleDetailsPageReducer } from '@/pages/ArticlesDetailPage/testing';
+import { profileReducer } from '@/features/editableProfileCard/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { articleDetailsReducer } from '@/entities/Article/testing';
 import { CommentFormReducer } from '@/features/AddCommentForm/testing';
