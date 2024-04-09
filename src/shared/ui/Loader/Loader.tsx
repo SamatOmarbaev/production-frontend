@@ -5,7 +5,7 @@ interface LoaderProps {
   className?: string
 }
 
-const Loader = ({ className }: LoaderProps) => (
+export const Loader = ({ className }: LoaderProps) => (
   <div className={classNames('lds-ellipsis', {}, [className])}>
     <div />
     <div />
@@ -13,5 +13,3 @@ const Loader = ({ className }: LoaderProps) => (
     <div />
   </div>
 );
-
-export default Loader;
