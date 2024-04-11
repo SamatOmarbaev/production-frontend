@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
-  ArticleSortField, ArticleSortSelector, ArticleType, ArticleView, ArticleViewSelector, ArticlesTypeTabs,
+  ArticleSortField, ArticleType, ArticleView,
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Card } from '@/shared/ui/Card';
@@ -16,6 +16,9 @@ import {
 } from '../../model/selectors/getArticlesPage';
 import { articlesPageActions } from '../../model/slice/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 
 interface ArticlesPageFiltersProps {
    className?: string;
@@ -86,7 +89,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = (props) => {
           onChange={onChangeSearch}
         />
       </Card>
-      <ArticlesTypeTabs
+      <ArticleTypeTabs
         value={type}
         onChangeType={onChangeType}
       />
