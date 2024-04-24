@@ -12,8 +12,9 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './PageWrapper.module.scss';
+import { TestProps } from '@/shared/types/tests';
 
-interface PageWrapperProps {
+interface PageWrapperProps extends TestProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
@@ -49,6 +50,8 @@ export const PageWrapper: FC<PageWrapperProps> = (props) => {
       ref={wrapperRef}
       className={classNames(cls.pageWrapper, {}, [className])}
       onScroll={onScroll}
+      // eslint-disable-next-line
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}

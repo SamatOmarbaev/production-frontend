@@ -6,7 +6,7 @@ function MainPage() {
   const { t } = useTranslation('main');
 
   return (
-    <PageWrapper>
+    <PageWrapper data-testid="MainPage">
       {t('Главная страница')}
     </PageWrapper>
   );

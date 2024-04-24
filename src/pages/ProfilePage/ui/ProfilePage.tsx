@@ -14,7 +14,7 @@ const ProfilePage = memo(() => {
   }
 
   return (
-    <PageWrapper className={classNames('', {}, [])}>
+    <PageWrapper data-testid="ProfilePage" className={classNames('', {}, [])}>
       <VStack gap="16" max>
         <EditableProfileCard id={id} />
         <ProfileRating profileId={id} />

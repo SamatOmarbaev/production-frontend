@@ -6,7 +6,7 @@ function ForbiddenPage() {
   const { t } = useTranslation();
 
   return (
-    <PageWrapper>
+    <PageWrapper data-testid="ForbiddenPage">
       {t('У вас нет доступа к этой странице')}
     </PageWrapper>
   );

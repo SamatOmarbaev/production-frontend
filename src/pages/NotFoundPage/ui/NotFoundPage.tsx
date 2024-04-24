@@ -8,7 +8,7 @@ export default function NotFoundPage() {
   const { t } = useTranslation();
 
   return (
-    <PageWrapper className={classNames(cls.NotFoundPage, {}, [])}>
+    <PageWrapper data-testid="NotFoundPage" className={classNames(cls.NotFoundPage, {}, [])}>
       {t('Страница не найдена')}
     </PageWrapper>
   );
