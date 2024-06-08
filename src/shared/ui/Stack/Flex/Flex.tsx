@@ -48,7 +48,7 @@ export interface FlexProps extends DivProps {
 
 export const Flex: FC<FlexProps> = (props) => {
   const {
-    className, children, justify = 'start', align = 'center', direction = 'row', gap, max,
+    className, children, justify = 'start', align = 'center', direction = 'row', gap, max, ...otherProps
   } = props;
 
   const classes = [
@@ -64,7 +64,7 @@ export const Flex: FC<FlexProps> = (props) => {
   };
 
   return (
-    <div className={classNames(cls.flex, mods, classes)}>
+    <div className={classNames(cls.flex, mods, classes)} {...otherProps}>
       {children}
     </div>
   );
