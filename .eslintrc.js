@@ -9,6 +9,7 @@ module.exports = {
     'airbnb',
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -84,6 +85,7 @@ module.exports = {
         testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
       },
     ],
+    'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
   },
   globals: {
     __IS_DEV__: true,
