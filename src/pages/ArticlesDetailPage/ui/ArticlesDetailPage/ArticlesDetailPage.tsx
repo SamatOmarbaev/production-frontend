@@ -12,7 +12,7 @@ import cls from './ArticlesDetailPage.module.scss';
 import { ArticlesDetailPageHeader } from '../ArticlesDetailPageHeader/ArticlesDetailPageHeader';
 import { ArticleDetailsComment } from '../ArticleDetailsComment/ArticleDetailsComment';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlags, toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 
 interface ArticlesDetailPageProps {
@@ -27,17 +27,10 @@ const ArticlesDetailPage: FC<ArticlesDetailPageProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation()
   const { id } = useParams<{ id: string }>();
-  const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled')
 
   if (!id) {
     return null;
   }
-
-  const articleRatingCard = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => <Card>{t('Оценка статей скоро появится')}</Card>
-  })
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -45,7 +38,11 @@ const ArticlesDetailPage: FC<ArticlesDetailPageProps> = (props) => {
         <VStack gap="16" max>
           <ArticlesDetailPageHeader />
           <ArticleDetails id={id} />
-          {articleRatingCard}
+          <ToggleFeatures
+            feature="isArticleRatingEnabled"
+            off={<Card max>{t('Оценка статей скоро появится')}</Card>}
+            on={<ArticleRating articleId={id} />}
+          />
           <ArticleRecomendationsList />
           <ArticleDetailsComment id={id} />
         </VStack>
