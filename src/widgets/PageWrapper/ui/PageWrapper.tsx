@@ -13,6 +13,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './PageWrapper.module.scss';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageWrapperProps extends TestProps {
   className?: string;
@@ -45,10 +46,16 @@ export const PageWrapper: FC<PageWrapperProps> = (props) => {
     }));
   }, 500);
 
+  const pageWrapperStyle = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => cls.pageWrapperRedesigned,
+    off: () => cls.pageWrapper,
+  })
+
   return (
     <main
       ref={wrapperRef}
-      className={classNames(cls.pageWrapper, {}, [className])}
+      className={classNames(pageWrapperStyle, {}, [className])}
       onScroll={onScroll}
       // eslint-disable-next-line
       data-testid={props['data-testid'] ?? 'Page'}

@@ -5,13 +5,13 @@ import { Theme } from '@/shared/const/theme';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
 import { useJsonSettings } from '@/entities/User';
 
-
 interface ThemeProviderProps {
   initialTheme?: Theme;
   children?: ReactNode;
 }
 
-const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
+const ThemeProvider = (props: ThemeProviderProps) => {
+  const { children, initialTheme } = props;
   const { theme: defaultTheme } = useJsonSettings();
   const [isThemeInited, setIsThemeInited] = useState(false);
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme || Theme.LIGHT);
@@ -22,10 +22,6 @@ const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
       setIsThemeInited(true)
     }
   }, [defaultTheme, isThemeInited]);
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme])
 
   const defaultProps = useMemo(
     () => ({

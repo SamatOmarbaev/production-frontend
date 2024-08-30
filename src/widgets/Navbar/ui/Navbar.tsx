@@ -2,18 +2,16 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { LoginModal } from '@/features/AuthByUsername';
 import {
   getUserAuthData,
 } from '@/entities/User';
-import { Text, TextTheme } from '@/shared/ui/Text';
-import { AppLinkTheme, AppLink } from '@/shared/ui/AppLink';
-import { HStack } from '@/shared/ui/Stack';
-import { NotificationButton } from '@/features/notificationButton';
-import { AvatarDropdown } from '@/features/avatarDropdown';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { LoginModal } from '@/features/AuthByUsername';
+import { NavbarRedesigned } from './NavbarRedesigned/NavbarRedesigned';
+import { NavbarOldDesigned } from './NavbarOldDesigned/NavbarOldDesigned';
+
 import cls from './Navbar.module.scss';
-import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
   className?: string;
@@ -34,24 +32,12 @@ const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(cls.Navbar, {}, [className])}>
-        <Text
-          theme={TextTheme.INVERTED}
-          title={t('My App')}
-          className={cls.appName}
-        />
-        <AppLink
-          to={getRouteArticleCreate()}
-          theme={AppLinkTheme.INVETRED}
-        >
-          {t('Создать статью')}
-        </AppLink>
-        <HStack gap="16" className={cls.actions}>
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
-      </header>
-    );
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        off={<NavbarOldDesigned />}
+        on={<NavbarRedesigned />}
+      />
+    )
   }
 
   return (

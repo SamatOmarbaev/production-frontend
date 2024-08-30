@@ -4,14 +4,18 @@
 @import "./themes/orange";
 @import "./variables/global";
 
-body {
-  font: var(--font-m);
-}
-
 .app {
   min-height: 100vh;
   color: var(--primary-color);
+  font: var(--font-m);
   background: var(--bg-color);
+}
+
+.app_redesigned {
+  min-height: 100vh;
+  color: var(--text-redesigned);
+  font: var(--font-m-redesigned);
+  background: var(--bg-redesigned);
 }
 
 .content-page {
