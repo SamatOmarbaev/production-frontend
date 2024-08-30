@@ -6,6 +6,7 @@ import cls from './ThemeSwitcher.module.scss';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { saveJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { IconWrapper } from '@/shared/ui/IconWrapper';
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -27,7 +28,7 @@ const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
       onClick={onToggleHandler}
       theme={ButtonTheme.CLEAR}
     >
-      <ThemeIcon className={cls.ThemeIcon} />
+      <IconWrapper Svg={ThemeIcon} width={40} height={40} inverted />
     </Button>
   );
 });

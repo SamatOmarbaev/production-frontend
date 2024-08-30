@@ -43,6 +43,8 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = (props) => {
           <IconWrapper
             Svg={viewType.icon}
             className={classNames('', { [cls.notSelected]: viewType.view !== view }, [])}
+            height={24}
+            width={24}
           />
         </Button>
       ))}
