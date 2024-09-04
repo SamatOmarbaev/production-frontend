@@ -6,7 +6,7 @@ import {
   getUserAuthData,
 } from '@/entities/User';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { NavbarRedesigned } from './NavbarRedesigned/NavbarRedesigned';
 import { NavbarOldDesigned } from './NavbarOldDesigned/NavbarOldDesigned';

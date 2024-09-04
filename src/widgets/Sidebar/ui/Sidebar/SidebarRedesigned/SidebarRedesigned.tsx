@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { AppLogo } from "@/shared/ui/AppLogo";
+import { AppLogo } from "@/shared/ui/deprecated/AppLogo";
 
 import cls from './SidebarRedesigned.module.scss';
 

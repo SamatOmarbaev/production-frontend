@@ -4,10 +4,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { PageWrapper } from '@/widgets/PageWrapper';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { ProfileRating } from '@/features/profileRating';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 
 const ProfilePage = memo(() => {
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
 
   if (!id) {
     return null;

@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { PageWrapper } from '@/widgets/PageWrapper';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { ArticleRecomendationsList } from '@/features/articleRecomendationsList';
 import { articleDetailsPageReducer } from '../../model/slice';
 import cls from './ArticlesDetailPage.module.scss';
@@ -13,7 +13,7 @@ import { ArticlesDetailPageHeader } from '../ArticlesDetailPageHeader/ArticlesDe
 import { ArticleDetailsComment } from '../ArticleDetailsComment/ArticleDetailsComment';
 import { ArticleRating } from '@/features/articleRating';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Card } from '@/shared/ui/Card';
+import { Card } from '@/shared/ui/deprecated/Card';
 
 interface ArticlesDetailPageProps {
   className?: string;

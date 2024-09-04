@@ -6,14 +6,14 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   Text, TextAlign, TextSize, TextTheme,
-} from '@/shared/ui/Text';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Avatar } from '@/shared/ui/Avatar';
+} from '@/shared/ui/deprecated/Text';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
-import { IconWrapper } from '@/shared/ui/IconWrapper';
+import { IconWrapper } from '@/shared/ui/deprecated/IconWrapper';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { ArticleBlock } from '../../model/types/article';
@@ -45,14 +45,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
-    case ArticleBlockType.CODE:
-      return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />;
-    case ArticleBlockType.IMAGE:
-      return <ArticleImageBlockComponent key={block.id} className={cls.block} block={block} />;
-    case ArticleBlockType.TEXT:
-      return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block} />;
-    default:
-      return null;
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />;
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent key={block.id} className={cls.block} block={block} />;
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block} />;
+      default:
+        return null;
     }
   }, []);
 

@@ -1,12 +1,12 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import ThemeIcon from '@/shared/assets/icons/theme.svg';
 import cls from './ThemeSwitcher.module.scss';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { saveJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { IconWrapper } from '@/shared/ui/IconWrapper';
+import { IconWrapper } from '@/shared/ui/deprecated/IconWrapper';
 
 interface ThemeSwitcherProps {
   className?: string;

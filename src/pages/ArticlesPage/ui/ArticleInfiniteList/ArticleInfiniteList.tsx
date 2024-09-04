@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { ArticleList } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 import { getArticle } from '../../model/slice/articlesPageSlice';
 import { getArticlesError, getArticlesIsLoading, getArticlesView } from '../../model/selectors/getArticlesPage';
 
