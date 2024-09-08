@@ -6,6 +6,10 @@
 }
 
 .item {
-  padding: 10px 20px;
+  padding: 8px 16px;
   cursor: pointer;
+}
+
+.selected {
+  background-color: var(--light-bg-redesigned);
 }

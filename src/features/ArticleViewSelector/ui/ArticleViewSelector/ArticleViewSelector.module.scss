@@ -1,12 +1,18 @@
 .viewSelector {
   display: flex;
   align-items: center;
+
+  .notSelected {
+    fill: var(--secondary-color);
+  }
+
+  .btn {
+    display: flex;
+  }
 }
 
-.notSelected {
-  fill: var(--secondary-color);
-}
-
-.btn {
-  display: flex;
+.viewSelectorRedesigned {
+  .notSelected {
+    color: var(--light-bg-redesigned);
+  }
 }

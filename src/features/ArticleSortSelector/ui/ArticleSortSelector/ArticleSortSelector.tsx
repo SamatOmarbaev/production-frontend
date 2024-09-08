@@ -5,6 +5,10 @@ import { Select, SelectOptions } from '@/shared/ui/deprecated/Select';
 import { SortOrder } from '@/shared/types/sortOrder';
 import { ArticleSortField } from '@/entities/Article';
 import cls from './ArticleSortSelector.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleSortSelectorProps {
   className?: string;
@@ -47,19 +51,39 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = (props) => {
   ], [t]);
 
   return (
-    <div className={classNames(cls.articleSortSelector, {}, [className])}>
-      <Select
-        label={t('Сортировка по')}
-        options={sortFieldOptions}
-        value={sort}
-        onChange={onChangeSort}
-      />
-      <Select
-        label={t('по')}
-        options={orderOptions}
-        value={order}
-        onChange={onChangeOrder}
-      />
-    </div>
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      on={
+        <VStack gap='8' align='start' className={classNames(cls.articleSortSelectorRedesigned, {}, [className])}>
+          <Text text={t('Сортировать по:')} />
+          <ListBox
+            items={sortFieldOptions}
+            initialValue={sort}
+            onChange={onChangeSort}
+          />
+          <ListBox
+            items={orderOptions}
+            initialValue={order}
+            onChange={onChangeOrder}
+          />
+        </VStack>
+      }
+      off={
+        <div className={classNames(cls.articleSortSelector, {}, [className])}>
+          <Select
+            label={t('Сортировка по')}
+            options={sortFieldOptions}
+            value={sort}
+            onChange={onChangeSort}
+          />
+          <Select
+            label={t('по')}
+            options={orderOptions}
+            value={order}
+            onChange={onChangeOrder}
+          />
+        </div>
+      }
+    />
   );
 };
