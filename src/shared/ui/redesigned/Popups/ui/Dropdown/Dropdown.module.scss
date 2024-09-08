@@ -1,0 +1,18 @@
+.menu {
+  position: absolute;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-bg-redesigned);
+  box-shadow: 2px 2px 4px var(--dark-bg-redesigned);
+}
+
+.item {
+  width: 100%;
+  padding: 10px 20px;
+  color: var(--text-redesigned);
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

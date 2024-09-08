@@ -1,7 +1,7 @@
 import { memo, ReactNode } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { AppLogo } from "@/shared/ui/redesigned/AppLogo";
 import { IconWrapper } from "@/shared/ui/redesigned/IconWrapper";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";

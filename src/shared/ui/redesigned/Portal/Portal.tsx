@@ -6,10 +6,6 @@ interface PortalProps {
   container?: Element | DocumentFragment | null
 }
 
-/**
- * @deprecated
- */
-
 export const Portal = (props: PortalProps) => {
   const { children, container = document.body } = props;
 

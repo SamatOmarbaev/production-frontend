@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import AppSvg from '@/shared/assets/icons/redesigned/logo.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { HStack } from '../../deprecated/Stack';
+import { HStack } from '../../redesigned/Stack';
 
 import cls from './AppLogo.module.scss';
 

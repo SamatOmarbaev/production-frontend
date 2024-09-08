@@ -1,12 +1,13 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { CommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comments';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { addCommentForArticle } from '../../model/services/addCommentArticle/addCommentForArticle';
 import { getArticleCommentsIsLoading } from '../../model/selectors/getComments';

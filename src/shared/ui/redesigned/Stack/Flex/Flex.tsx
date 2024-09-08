@@ -1,13 +1,15 @@
 import {
   DetailedHTMLProps, FC, HTMLAttributes, ReactNode,
 } from 'react';
+
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+
 import cls from './Flex.module.scss';
 
-export type FlexJustify = 'start' | 'center' | 'end' | 'between'
-export type FlexAlign = 'start' | 'center' | 'end'
-export type FlexDirection = 'row' | 'column'
-export type FlexGap = '4' | '8' | '16' | '32'
+export type FlexJustify = 'start' | 'center' | 'end' | 'between';
+export type FlexAlign = 'start' | 'center' | 'end';
+export type FlexDirection = 'row' | 'column';
+export type FlexGap = '4' | '8' | '16' | '32';
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
@@ -45,10 +47,6 @@ export interface FlexProps extends DivProps {
   gap?: FlexGap;
   max?: boolean;
 }
-
-/**
- * @deprecated
- */
 
 export const Flex: FC<FlexProps> = (props) => {
   const {
