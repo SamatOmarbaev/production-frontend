@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import GridIcon from '@/shared/assets/icons/tiled-24-24.svg';
-import ListIcon from '@/shared/assets/icons/list-24-24.svg';
+import GridIcon from '@/shared/assets/icons/deprecated/tiled-24-24.svg';
+import ListIcon from '@/shared/assets/icons/deprecated/list-24-24.svg';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { IconWrapper } from '@/shared/ui/deprecated/IconWrapper';
 import { ArticleView } from '@/entities/Article';

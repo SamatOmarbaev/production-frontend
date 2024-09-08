@@ -1280,7 +1280,7 @@
       },
       "jsonSettings": {
         "isArticlesPageWasOpened": true,
-        "theme": "app_light_theme"
+        "theme": "app_dark_theme"
       },
       "avatar": "https://teknotower.com/wp-content/uploads/2020/11/js.png"
     },
@@ -1297,7 +1297,7 @@
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
       "jsonSettings": {
         "isArticlesPageWasOpened": true,
-        "theme": "app_dark_theme"
+        "theme": "app_light_theme"
       }
     },
     {

@@ -2,7 +2,7 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
-import EyeIcon from '@/shared/assets/icons/eye.svg';
+import EyeIcon from '@/shared/assets/icons/deprecated/eye.svg';
 import { IconWrapper } from '@/shared/ui/deprecated/IconWrapper';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';

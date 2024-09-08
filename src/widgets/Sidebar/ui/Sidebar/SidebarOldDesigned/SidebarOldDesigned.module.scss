@@ -5,27 +5,27 @@
   height: calc(100vh - var(--navbar-height));
   background-color: var(--inverted-bg-color);
   transition: width 0.3s;
-}
 
-.switchers {
-  position: absolute;
-  bottom: 20px;
-}
-
-.collapsedBtn {
-  position: absolute;
-  right: -32px;
-  bottom: 32px;
-  z-index: 10;
-
-  &:hover {
-    color: var(--inverted-secondary-color);
+  .switchers {
+    position: absolute;
+    bottom: 20px;
   }
-}
 
-.items {
-  margin-top: 20px;
-  margin-left: 30px;
+  .collapsedBtn {
+    position: absolute;
+    right: -32px;
+    bottom: 32px;
+    z-index: 10;
+
+    &:hover {
+      color: var(--inverted-secondary-color);
+    }
+  }
+
+  .items {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
 }
 
 .collapsed {

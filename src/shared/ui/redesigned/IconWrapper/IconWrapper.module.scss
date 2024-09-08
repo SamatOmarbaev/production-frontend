@@ -1,0 +1,16 @@
+.iconWrapper {
+  color: var(--icon-redesigned);
+}
+
+.button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.button:hover .iconWrapper {
+  color: var(--accent-redesigned);
+}

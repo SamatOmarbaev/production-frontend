@@ -1,4 +1,5 @@
 import { memo, ReactNode } from 'react';
+
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { classNames } from '@/shared/lib/classNames/classNames';

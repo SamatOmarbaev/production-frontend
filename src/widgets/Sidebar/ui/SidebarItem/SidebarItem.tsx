@@ -1,11 +1,11 @@
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { AppLinkTheme, AppLink } from '@/shared/ui/deprecated/AppLink';
-import { classNames } from '@/shared/lib/classNames/classNames';
+
 import { getUserAuthData } from '@/entities/User';
 import { SidebarItemType } from '../../model/types/sidebar';
-import cls from './SidebarItem.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { SidebarItemDeprecated } from './SidebarItemDeprecated/SidebarItemDeprecated';
+import { SidebarItemRedesigned } from './SidebarItemRedesigned/SidebarItemRedesigned';
 
 interface SidebarItemProps {
   item: SidebarItemType
@@ -13,7 +13,6 @@ interface SidebarItemProps {
 }
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
-  const { t } = useTranslation();
   const isAuth = useSelector(getUserAuthData);
 
   if (item.authOnly && !isAuth) {
@@ -21,15 +20,10 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   }
 
   return (
-    <AppLink
-      theme={AppLinkTheme.SECONDARY}
-      className={classNames(cls.item, { [cls.collapsed]: collapsed })}
-      to={item.path}
-    >
-      <item.Icon />
-      <span className={cls.link}>
-        {t(item.text)}
-      </span>
-    </AppLink>
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      on={<SidebarItemRedesigned item={item} collapsed={collapsed} />}
+      off={<SidebarItemDeprecated item={item} collapsed={collapsed} />}
+    />
   );
 });

@@ -1,16 +1,13 @@
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
+
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { SidebarRedesigned } from './SidebarRedesigned/SidebarRedesigned';
 import { SidebarOldDesigned } from './SidebarOldDesigned/SidebarOldDesigned';
 
-interface SidebarProps {
-  className?: string;
-}
-
-export const Sidebar = memo(({ className }: SidebarProps) => {
+export const Sidebar = memo(() => {
   const [collapsed, setCollapsed] = useState(false);
   const sidebarItemsList = useSelector(getSidebarItems);
 
@@ -29,7 +26,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   return (
     <ToggleFeatures
       feature='isAppRedesigned'
-      on={<SidebarRedesigned collapsed={collapsed} />}
+      on={<SidebarRedesigned collapsed={collapsed} itemList={itemList} toggleSidebar={toggleSidebar} />}
       off={<SidebarOldDesigned collapsed={collapsed} itemList={itemList} toggleSidebar={toggleSidebar} />}
     />
   )

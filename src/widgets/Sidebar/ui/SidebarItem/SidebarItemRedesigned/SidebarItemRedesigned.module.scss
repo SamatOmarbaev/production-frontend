@@ -1,0 +1,34 @@
+.itemRedesigned {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.link {
+  width: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.collapsedRedesigned {
+  gap: 0;
+  height: 30px;
+  padding: 0 8px;
+
+  .link {
+    width: 0;
+    margin: 0;
+    opacity: 0;
+  }
+}
+
+.active {
+  position: relative;
+  color: var(--accent-redesigned);
+  background: linear-gradient(89.97deg, rgb(29 89 255 / 30%) 1.15%, rgb(94 211 243 / 0%) 99.97%);
+  border-left: 2px solid var(--accent-redesigned);
+}

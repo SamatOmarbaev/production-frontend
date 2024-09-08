@@ -9,8 +9,8 @@ import {
 } from '@/shared/ui/deprecated/Text';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import EyeIcon from '@/shared/assets/icons/eye.svg';
-import CalendarIcon from '@/shared/assets/icons/calendar.svg';
+import EyeIcon from '@/shared/assets/icons/deprecated/eye.svg';
+import CalendarIcon from '@/shared/assets/icons/deprecated/calendar.svg';
 import { IconWrapper } from '@/shared/ui/deprecated/IconWrapper';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
