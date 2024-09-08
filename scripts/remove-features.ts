@@ -141,6 +141,8 @@ files.forEach((sourceFile) => {
     ) {
       return replaceToggleComponent(node);
     }
+
+    return null;
   });
 });
 
