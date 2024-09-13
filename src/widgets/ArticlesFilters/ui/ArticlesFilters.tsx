@@ -40,6 +40,7 @@ export const ArticlesFilters: FC<ArticlesFiltersProps> = (props) => {
         <Input
           placeholder={t('Поиск')}
           value={search}
+          size='s'
           onChange={onChangeSearch}
           addonLeft={<IconWrapper Svg={SearchIcon} />}
         />
