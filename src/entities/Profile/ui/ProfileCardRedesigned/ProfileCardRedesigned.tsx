@@ -19,16 +19,16 @@ export const ProfileCardRedesignedSkeleton = () => (
       </HStack>
       <HStack gap='32' max>
         <VStack gap='16' max>
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
+          <Skeleton border='8px' width="100%" height={38} />
+          <Skeleton border='8px' width="100%" height={38} />
+          <Skeleton border='8px' width="100%" height={38} />
+          <Skeleton border='8px' width="100%" height={38} />
         </VStack>
         <VStack gap='16' max>
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
-          <Skeleton width="100%" height={38} />
+          <Skeleton border='8px' width="100%" height={38} />
+          <Skeleton border='8px' width="100%" height={38} />
+          <Skeleton border='8px' width="100%" height={38} />
+          <Skeleton border='8px' width="100%" height={38} />
         </VStack>
       </HStack>
     </VStack>

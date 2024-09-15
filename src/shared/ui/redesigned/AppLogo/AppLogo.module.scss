@@ -3,6 +3,11 @@
   fill: var(--text-redesigned);
 }
 
+.appLogo {
+  position: relative;
+  z-index: 10;
+}
+
 .gradientBig {
   position: absolute;
   width: 300px;
