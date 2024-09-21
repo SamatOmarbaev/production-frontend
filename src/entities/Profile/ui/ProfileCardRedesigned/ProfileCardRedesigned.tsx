@@ -12,7 +12,7 @@ import { ProfileCardProps } from '../ProfileCard/ProfileCard';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 export const ProfileCardRedesignedSkeleton = () => (
-  <Card padding='24' max >
+  <Card padding='24' max border='round' >
     <VStack gap='32'>
       <HStack max justify='center'>
         <Skeleton border='100%' height={128} width={128} />

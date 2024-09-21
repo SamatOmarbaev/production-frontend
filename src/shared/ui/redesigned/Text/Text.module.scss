@@ -67,3 +67,23 @@
     font: var(--font-l-redesigned);
   }
 }
+
+.xl {
+  .title {
+    font-size: var(--font-size-xl);
+  }
+}
+
+.bold {
+  .title,
+  .text {
+    font-weight: 700;
+  }
+}
+
+.extrabold {
+  .title,
+  .text {
+    font-weight: 900;
+  }
+}

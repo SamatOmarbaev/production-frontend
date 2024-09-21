@@ -8,6 +8,8 @@ export type TextAlign = 'right' | 'left' | 'center';
 
 export type TextSize = 's' | 'm' | 'l';
 
+export type TextWeight = 'bold' | 'extraBold';
+
 interface TextProps {
   className?: string;
   title?: string;
@@ -15,11 +17,12 @@ interface TextProps {
   variant?: TextVariant;
   align?: TextAlign;
   size?: TextSize;
-
+  weight?: TextWeight;
+  xlSize?: boolean;
   'data-testid'?: string;
 }
 
-type HeaderTagType = 'h1' | 'h2' | 'h3'
+type HeaderTagType = 'h1' | 'h2' | 'h3';
 
 const mapSizeToClass: Record<TextSize, string> = {
   's': 'size_s',
@@ -36,16 +39,16 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
 export const Text = memo((props: TextProps) => {
   const {
     className, text, title, variant = 'normal', align = 'left',
-    size = 'm', 'data-testid': dataTestId = '',
+    size = 'm', 'data-testid': dataTestId = '', weight = 'bold', xlSize
   } = props;
 
   const HeaderTag = mapSizeToHeaderTag[size];
   const sizeClass = mapSizeToClass[size];
 
-  const additionalClassess = [className, cls[variant], cls[align], sizeClass];
+  const additionalClassess = [className, cls[weight], cls[variant], cls[align], sizeClass];
 
   return (
-    <div className={classNames(cls.Text, {}, additionalClassess)}>
+    <div className={classNames(cls.Text, { [cls.xl]: xlSize }, additionalClassess)}>
       {title && (
         <HeaderTag
           className={cls.title}
