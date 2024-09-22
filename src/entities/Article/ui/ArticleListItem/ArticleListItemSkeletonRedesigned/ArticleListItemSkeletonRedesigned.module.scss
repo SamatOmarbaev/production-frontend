@@ -1,0 +1,26 @@
+.GRID {
+  width: 100%;
+
+  .views {
+    align-self: flex-end;
+  }
+}
+
+.LIST {
+  .card {
+    width: 249px;
+    height: 346px;
+    padding: 16px;
+    overflow: hidden;
+  }
+
+  .image {
+    min-height: 120px;
+    max-height: 120px;
+    object-fit: cover;
+  }
+
+  .footer {
+    height: 100%;
+  }
+}

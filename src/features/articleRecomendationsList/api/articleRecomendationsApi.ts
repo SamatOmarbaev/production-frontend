@@ -8,6 +8,7 @@ const recomendationsApi = rtkApi.injectEndpoints({
         url: '/articles',
         params: {
           _limit: limit,
+          _expand: 'user',
         },
       }),
     }),
@@ -15,4 +16,5 @@ const recomendationsApi = rtkApi.injectEndpoints({
   overrideExisting: false,
 });
 
-export const useArticleRecomendationsList = recomendationsApi.useGetArticleRecomendationsListQuery;
+export const useArticleRecomendationsList =
+  recomendationsApi.useGetArticleRecomendationsListQuery;

@@ -12,9 +12,9 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { ArticleListItemProps } from '../ArticleListItem';
-import cls from './ArticleListItemRedesigned.module.scss';
 import { IconWrapper } from '@/shared/ui/redesigned/IconWrapper';
 import { Text } from '@/shared/ui/redesigned/Text';
+import cls from './ArticleListItemRedesigned.module.scss';
 
 export const ArticleListItemRedesigned = (props: ArticleListItemProps) => {
     const {
@@ -22,6 +22,12 @@ export const ArticleListItemRedesigned = (props: ArticleListItemProps) => {
     } = props;
     const { t } = useTranslation();
 
+    const userInfo = (
+        <>
+            <Avatar size={32} src={article.user.avatar} alt={article.title} />
+            <Text weight='bold' text={article.user.username} />
+        </>
+    )
     const views = (
         <HStack gap='8'>
             <IconWrapper Svg={EyeIcon} />
@@ -42,8 +48,7 @@ export const ArticleListItemRedesigned = (props: ArticleListItemProps) => {
             >
                 <VStack gap='16' max>
                     <HStack gap='8'>
-                        <Avatar size={32} src={article.user.avatar} alt={article.title} />
-                        <Text weight='bold' text={article.user.username} />
+                        {userInfo}
                         <Text text={article.createdAt} />
                     </HStack>
                     <Text xlSize weight="extraBold" title={article.title} />
@@ -80,23 +85,25 @@ export const ArticleListItemRedesigned = (props: ArticleListItemProps) => {
             className={classNames('', {}, [className, cls[view]])}
             data-testid="ArticleListItem"
         >
-            <Card border='round'>
-                <div className={cls.imageWrapper}>
-                    <AppImage
-                        fallback={<Skeleton width={200} height={200} />}
-                        src={article.img}
-                        alt={article.title}
-                        className={cls.image}
-                    />
-                </div>
-                <HStack max justify='between'>
-                    <Text text={article.createdAt} />
-                    {views}
-                </HStack>
-                <HStack gap='4'>
-                    <Avatar size={32} src={article.user.avatar} alt={article.title} />
-                    <Text weight='bold' text={article.user.username} />
-                </HStack>
+            <Card padding='0' className={cls.card} border='round'>
+                <AppImage
+                    fallback={<Skeleton width="100%" height={240} />}
+                    src={article.img}
+                    alt={article.title}
+                    className={cls.image}
+                />
+                <VStack className={cls.info} gap='4'>
+                    <Text text={article.subtitle} className={cls.title} />
+                    <VStack gap='4' className={cls.footer} max>
+                        <HStack max justify='between'>
+                            <Text text={article.createdAt} />
+                            {views}
+                        </HStack>
+                        <HStack gap='4'>
+                            {userInfo}
+                        </HStack>
+                    </VStack>
+                </VStack>
             </Card>
         </AppLink>
     );
