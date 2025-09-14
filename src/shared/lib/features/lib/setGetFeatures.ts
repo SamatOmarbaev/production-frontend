@@ -13,7 +13,7 @@ export function getFeatureFlag(flag: keyof FeatureFlags) {
     return false;
   }
 
-  return featureFlags[flag];
+  return featureFlags[flag] ?? true;
 }
 
 export function getAllFeatureFlags() {

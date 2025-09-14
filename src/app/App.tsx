@@ -24,7 +24,7 @@ export const App: FC = () => {
     return <PageLoader />
   }
 
-  const AppOldDesigned = <div className={classNames('app', {}, [theme])}>
+  const AppOldDesigned = <div id='app' className={classNames('app', {}, [theme])}>
     <Suspense fallback="">
       <Navbar />
       <div className="content-page">
@@ -34,7 +34,7 @@ export const App: FC = () => {
     </Suspense>
   </div>
 
-  const AppRedesigned = <div className={classNames('app_redesigned', {}, [theme])}>
+  const AppRedesigned = <div id='app' className={classNames('app_redesigned', {}, [theme])}>
     <Suspense fallback="">
       <MainLayout
         header={<Navbar />}
